@@ -1,6 +1,6 @@
 organization  := "com.enginyoyen"
 
-version       := "0.1"
+version       := "0.1.0"
 
 scalaVersion  := "2.10.3"
 
@@ -28,3 +28,10 @@ libraryDependencies ++= {
   )
 }
 
+
+
+lazy val m2Repo =
+  Resolver.file("publish-m2-local",
+    Path.userHome / ".m2" / "repository")
+
+publishTo := Some(m2Repo)
